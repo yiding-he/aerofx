@@ -27,7 +27,7 @@
  * either expressed or implied, of the FreeBSD Project.
  */
 
-package org.aerofx.controls.skin;
+package com.hyd.aerofx.controls.skin;
 
 import com.sun.javafx.scene.control.skin.RadioButtonSkin;
 import javafx.beans.InvalidationListener;

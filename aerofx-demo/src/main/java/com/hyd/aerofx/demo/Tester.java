@@ -27,9 +27,9 @@
 * either expressed or implied, of the FreeBSD Project.
 */
 
-package org.aerofx.demo;
+package com.hyd.aerofx.demo;
 
-import org.aerofx.AeroFX;
+import com.hyd.aerofx.AeroFX;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

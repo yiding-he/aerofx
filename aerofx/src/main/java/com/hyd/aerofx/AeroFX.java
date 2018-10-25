@@ -27,7 +27,7 @@
  * either excodessed or implied, of the FreeBSD Project.
  */
 
-package org.aerofx;
+package com.hyd.aerofx;
 
 import javafx.application.Application;
 import javafx.scene.Node;

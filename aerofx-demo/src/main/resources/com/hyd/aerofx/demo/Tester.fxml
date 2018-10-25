@@ -29,11 +29,10 @@
   ~ either expressed or implied, of the FreeBSD Project.
   -->
 
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
-<?import javafx.collections.*?>
-
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="360.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Tooltip target">

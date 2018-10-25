@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -9,19 +9,19 @@
         <version>7</version>
     </parent>
 
-    <artifactId>aerofx-parent</artifactId>
+    <groupId>com.hyd</groupId>
+    <artifactId>hydrogen-aerofx-parent</artifactId>
     <version>0.3-SNAPSHOT</version>
-    <groupId>org.aerofx</groupId>
     <packaging>pom</packaging>
-    <name>AeroFX Parent</name>
-    <url>http://www.aerofx.org</url>
+
+    <name>Hydrogen AeroFX Parent</name>
 
     <licenses>
-    <license>
-        <name>The 2-Clause BSD License</name>
-        <url>http://opensource.org/licenses/BSD-2-Clause</url>
-        <distribution>repo</distribution>
-    </license>
+        <license>
+            <name>The 2-Clause BSD License</name>
+            <url>http://opensource.org/licenses/BSD-2-Clause</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
 
     <developers>
@@ -38,11 +38,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-	
-	<modules>
-		<module>aerofx</module>
+
+    <modules>
+        <module>aerofx</module>
         <module>aerofx-demo</module>
-	</modules>
+    </modules>
 
     <build>
         <plugins>

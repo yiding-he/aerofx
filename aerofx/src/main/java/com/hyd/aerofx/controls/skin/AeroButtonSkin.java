@@ -27,8 +27,9 @@
  * either expressed or implied, of the FreeBSD Project.
  */
 
-package org.aerofx.controls.skin;
+package com.hyd.aerofx.controls.skin;
 
+import com.hyd.aerofx.util.BindableTransition;
 import com.sun.javafx.scene.control.skin.ButtonSkin;
 import javafx.animation.Animation;
 import javafx.animation.Timeline;
@@ -46,8 +47,6 @@ import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
-
-import org.aerofx.util.BindableTransition;
 import javafx.util.Duration;
 
 import java.util.ArrayList;

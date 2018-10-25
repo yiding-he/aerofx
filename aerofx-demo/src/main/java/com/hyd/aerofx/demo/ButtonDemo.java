@@ -27,28 +27,39 @@
  * either expressed or implied, of the FreeBSD Project.
  */
 
-package org.aerofx.demo;
+package com.hyd.aerofx.demo;
 
-import org.aerofx.AeroFX;
+import com.hyd.aerofx.AeroFX;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 public class ButtonDemo extends Application {
+
     public void start(Stage primaryStage) throws Exception {
-        Pane root = new StackPane();
-        Button bt = new Button("OK");
-        bt.setPrefHeight(200);
-        bt.setPrefWidth(300);
-        Button b2t = new Button("OK");
         AeroFX.style();
-        root.getChildren().add(bt);
-        root.getChildren().add(b2t);
+
+        FlowPane root = new FlowPane();
+        root.setHgap(10);
+        root.setVgap(10);
+        root.setPadding(new Insets(20));
+
+        root.getChildren().addAll(
+                button("button1"),
+                button("button2"),
+                button("确定(_O)"),
+                button("取消(_C)"),
+                button("打印(_P)...")
+        );
+
         primaryStage.setScene(new Scene(root, 300, 300));
         primaryStage.show();
     }
-    public static void main(String... args) { launch(args); }
+
+    private Button button(String text) {
+        return new Button(text);
+    }
 }

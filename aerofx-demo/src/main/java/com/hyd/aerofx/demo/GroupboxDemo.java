@@ -27,31 +27,35 @@
  * either expressed or implied, of the FreeBSD Project.
  */
 
-package org.aerofx.demo;
+package com.hyd.aerofx.demo;
 
-import org.aerofx.AeroFX;
+import com.hyd.aerofx.AeroFX;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class SystemSettingsDemo extends Application {
-    /**
-     *
-     * @param primaryStage  The primary Stage
-     * @throws Exception
-     */
+public class GroupboxDemo extends Application{
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SystemSettingsDemo.fxml"));
-        primaryStage.setTitle("Systemeigenschaften (JavaFX)");
-        primaryStage.setResizable(false);
+        Pane root = new StackPane();
+        CheckBox bt = new CheckBox("eieieie");
+        StackPane sp = new StackPane(bt);
+        TitledPane tp = new TitledPane();
         Scene myScene = new Scene(root, 402, 446);
-
+        tp.setLayoutX(20);
+        tp.setLayoutY(20);
+        tp.setText("foo");
+        tp.setMaxWidth(180);
+        tp.setMaxHeight(150);
+        AeroFX.styleGroupBox(tp);
         AeroFX.style();
-        AeroFX.styleAllAsGroupBox(root);
-
+        tp.setContent(sp);
+        root.getChildren().add(tp);
         primaryStage.setScene(myScene);
         primaryStage.show();
     }

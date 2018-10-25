@@ -3,11 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>aerofx-demo</artifactId>
-    <name>AeroFX-Demo</name>
+    <name>Hydrogen AeroFX Demo</name>
 
     <parent>
-        <groupId>org.aerofx</groupId>
-        <artifactId>aerofx-parent</artifactId>
+        <groupId>com.hyd</groupId>
+        <artifactId>hydrogen-aerofx-parent</artifactId>
         <version>0.3-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>aerofx</artifactId>
+            <artifactId>hydrogen-aerofx</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
