@@ -37,15 +37,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class SystemSettingsDemo extends Application {
+
     /**
+     * @param primaryStage The primary Stage
      *
-     * @param primaryStage  The primary Stage
-     * @throws Exception
+     * @throws Exception ...
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("SystemSettingsDemo.fxml"));
-        primaryStage.setTitle("Systemeigenschaften (JavaFX)");
+        primaryStage.setTitle("系统属性 (JavaFX)");
         primaryStage.setResizable(false);
         Scene myScene = new Scene(root, 402, 446);
 
@@ -55,5 +56,8 @@ public class SystemSettingsDemo extends Application {
         primaryStage.setScene(myScene);
         primaryStage.show();
     }
-    public static void main(String... args) { launch(args); }
+
+    public static void main(String... args) {
+        launch(args);
+    }
 }
