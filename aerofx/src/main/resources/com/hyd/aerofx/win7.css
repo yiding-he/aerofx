@@ -476,7 +476,7 @@
 *********************************************/
 .separator:horizontal{
     -fx-border-color:rgb(160,160,160);
-    -fx-border-width: 0.5;
+    -fx-border-width: 0 0 1 0;
 }
 
 
