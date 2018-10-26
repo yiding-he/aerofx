@@ -119,10 +119,10 @@
 
                 <Label layoutX="14.0" layoutY="171.0" text="保护设置" />
                 <Separator layoutX="70.0" layoutY="178.0" prefWidth="310.0" />
-                <TableView layoutX="24.0" layoutY="190.0" prefHeight="89.0" prefWidth="341.0">
+                <TableView fx:id="tblDrivers" layoutX="24.0" layoutY="190.0" prefHeight="89.0" prefWidth="341.0">
                     <columns>
-                        <TableColumn prefWidth="229.0" text="可用驱动器" />
-                        <TableColumn minWidth="0.0" prefWidth="128.0" text="保护" />
+                        <TableColumn fx:id="colDriverName" prefWidth="150.0" text="可用驱动器" />
+                        <TableColumn fx:id="colProtection" prefWidth="100.0" text="保护" />
                     </columns>
                 </TableView>
                 <Label layoutX="24.0" layoutY="291.0" text="系统管理员已禁用配置。" />

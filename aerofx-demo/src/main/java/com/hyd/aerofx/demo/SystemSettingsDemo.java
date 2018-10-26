@@ -31,9 +31,14 @@ package com.hyd.aerofx.demo;
 
 import com.hyd.aerofx.AeroFX;
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class SystemSettingsDemo extends Application {
@@ -45,7 +50,11 @@ public class SystemSettingsDemo extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SystemSettingsDemo.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("SystemSettingsDemo.fxml"));
+        loader.setController(new SystemSettingsController());
+
+        Parent root = loader.load();
         primaryStage.setTitle("系统属性 (JavaFX)");
         primaryStage.setResizable(false);
         Scene myScene = new Scene(root, 402, 446);
@@ -59,5 +68,45 @@ public class SystemSettingsDemo extends Application {
 
     public static void main(String... args) {
         launch(args);
+    }
+
+    public static class SystemSettingsController {
+
+        @FXML
+        TableView<DriverItem> tblDrivers;
+
+        @FXML
+        TableColumn<DriverItem, String> colDriverName;
+
+        @FXML
+        TableColumn<DriverItem, String> colProtection;
+
+        public void initialize() {
+            colDriverName.setCellValueFactory(f -> f.getValue().driverName);
+            colProtection.setCellValueFactory(f -> f.getValue().protection);
+
+            tblDrivers.getItems().addAll(
+                    new DriverItem("本地磁盘(C:)", "启用"),
+                    new DriverItem("本地磁盘(D:)", "启用"),
+                    new DriverItem("本地磁盘(E:)", "启用"),
+                    new DriverItem("本地磁盘(F:)", "启用"),
+                    new DriverItem("本地磁盘(G:)", "启用"),
+                    new DriverItem("本地磁盘(H:)", "启用"),
+                    new DriverItem("本地磁盘(I:)", "启用"),
+                    new DriverItem("本地磁盘(J:)", "启用")
+            );
+        }
+    }
+
+    public static class DriverItem {
+
+        public StringProperty driverName = new SimpleStringProperty();
+
+        public StringProperty protection = new SimpleStringProperty();
+
+        public DriverItem(String driverName, String protection) {
+            this.driverName.setValue(driverName);
+            this.protection.setValue(protection);
+        }
     }
 }
