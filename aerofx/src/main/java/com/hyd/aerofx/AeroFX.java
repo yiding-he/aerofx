@@ -38,51 +38,52 @@ import javafx.scene.control.TitledPane;
 
 /**
  * <p>
- *     The facade that provides unified access to the AeroFX implementation by exposing an easy to use API.
- *     It currently contains the following functionality:
+ * The facade that provides unified access to the AeroFX implementation by exposing an easy to use API.
+ * It currently contains the following functionality:
  *
- *     <ul>
- *         <li>Style your complete application with a Windows 7 look and feel</li>
- *         <li>Style a single TitledPane as a GroupBox</li>
- *         <li>Style all TitledPanes in your application as GroupBoxes</li>
- *     </ul>
+ * <ul>
+ * <li>Style your complete application with a Windows 7 look and feel</li>
+ * <li>Style a single TitledPane as a GroupBox</li>
+ * <li>Style all TitledPanes in your application as GroupBoxes</li>
+ * </ul>
  *
- *     <p>As of version 0.1-SNAPSHOT, AeroFX can style the following JavaFX-controls:</p>
- *     <ul>
- *         <li>Button</li>
- *         <li>TextField</li>
- *         <li>CheckBox</li>
- *         <li>RadioButton</li>
- *         <li>TabPane</li>
- *         <li>Hyperlink</li>
- *         <li>TitledPane</li>
- *         <li>TableView</li>
- *     </ul>
+ * <p>As of version 0.1-SNAPSHOT, AeroFX can style the following JavaFX-controls:</p>
+ * <ul>
+ * <li>Button</li>
+ * <li>TextField</li>
+ * <li>CheckBox</li>
+ * <li>RadioButton</li>
+ * <li>TabPane</li>
+ * <li>Hyperlink</li>
+ * <li>TitledPane</li>
+ * <li>TableView</li>
+ * </ul>
  *
- *     <h2>Important:</h2>
- *     <p>
- *         Please call all AeroFX-functions before calling <code>primaryStage.show()</code>!
- *         After calling show(), AeroFX-calls do not have the desired effect.
- *     </p>
+ * <h2>Important:</h2>
+ * <p>
+ * Please call all AeroFX-functions before calling <code>primaryStage.show()</code>!
+ * After calling show(), AeroFX-calls do not have the desired effect.
+ * </p>
  *
- *     <h3>Usage examples:</h3>
- *     <p>
- *         To style your application, call:
- *         <code>AeroFX.stlye();</code>
- *     </p>
- *     <p>
- *         To style a single TitledPane as a GroupBox, use
- *         <code>AeroFX.styleGroupBox(aTitledPane)</code>
- *     </p>
- *     <p>
- *         To style all TitledPanes in your application, call <code>AeroFX.styleAllAsGroupBox(root)</code> with your applications Parent-object
+ * <h3>Usage examples:</h3>
+ * <p>
+ * To style your application, call:
+ * <code>AeroFX.stlye();</code>
+ * </p>
+ * <p>
+ * To style a single TitledPane as a GroupBox, use
+ * <code>AeroFX.styleGroupBox(aTitledPane)</code>
+ * </p>
+ * <p>
+ * To style all TitledPanes in your application, call <code>AeroFX.styleAllAsGroupBox(root)</code> with your applications Parent-object
  *
- *     </p>
+ * </p>
  * </p>
  *
  * @author Matthias Meidinger
  */
 public class AeroFX {
+
     /**
      * A constant that holds the path to the main CSS file for AeroFX
      */
@@ -91,38 +92,39 @@ public class AeroFX {
     /**
      * Styles an application with AeroFX
      */
-    public static void style(){
+    public static void style() {
         Application.setUserAgentStylesheet(AERO_CSS_NAME);
     }
 
     /**
      * Styles a given TitledPane as a Windows-like GroupBox
+     *
      * @param p TitledPane to be styled
      */
-    public static void styleGroupBox(TitledPane p){
+    public static void styleGroupBox(TitledPane p) {
         p.getStyleClass().clear();
         p.getStyleClass().add("group-box");
     }
 
     /**
      * Styles all TitledPanes in the given parent as Windows-like GroupBoxes
+     *
      * @param p Parent to look for TitledPanes
      */
-    public static void styleAllAsGroupBox(Parent p){
-            for(Node a : p.getChildrenUnmodifiable()){
-                if(a instanceof TitledPane) {
-                    styleGroupBox((TitledPane) a);
-                } else if(a instanceof TabPane) {
-                    for(Tab t : ((TabPane)a).getTabs()) {
-                        Node content = t.getContent();
-                        if(content != null && content instanceof Parent) {
-                            styleAllAsGroupBox((Parent) content);
-                        }
+    public static void styleAllAsGroupBox(Parent p) {
+        for (Node a : p.getChildrenUnmodifiable()) {
+            if (a instanceof TitledPane) {
+                styleGroupBox((TitledPane) a);
+            } else if (a instanceof TabPane) {
+                for (Tab t : ((TabPane) a).getTabs()) {
+                    Node content = t.getContent();
+                    if (content instanceof Parent) {
+                        styleAllAsGroupBox((Parent) content);
                     }
                 }
-                else if(a instanceof Parent) {
-                    styleAllAsGroupBox((Parent) a);
-                }
+            } else if (a instanceof Parent) {
+                styleAllAsGroupBox((Parent) a);
             }
+        }
     }
 }
