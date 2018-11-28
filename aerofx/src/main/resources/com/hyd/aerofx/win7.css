@@ -172,7 +172,7 @@
 }
 
 .check-box > .box {
-    -fx-padding: 0.7em;
+    -fx-padding: 0.67em;
     -fx-background-insets: 0, 2, 4;
     -fx-border-color: rgb(140.0, 141.0, 141.0);
     -fx-background-color: rgb(244, 244, 244),
